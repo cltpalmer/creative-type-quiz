@@ -52,10 +52,16 @@ h1 {
     margin-left: 10px;
 }
 
-.answer:hover, .answer input[type="radio"]:checked + span {
+.answer:hover {
     background-color: white;
     color: #A883F9;
     border-color: white;
+}
+
+.answer input[type="radio"]:checked + span {
+    background-color: white;
+    color: #A883F9;
+    border: 2px solid white;
 }
 
 button {
