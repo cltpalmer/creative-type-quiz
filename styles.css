@@ -15,27 +15,30 @@ body {
   max-width: 600px;
 }
 
-.welcome-screen, .quiz-screen, .result-screen {
-  background-color: black;
+.welcome-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
-.logo img {
-  width: 100px;
-  margin-bottom: 20px;
-}
-
-.start-btn, .next-btn, .submit-btn {
+.start-btn {
   background-color: #A883F9;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 40px;
+  font-size: 24px;
   color: white;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 20px;
 }
 
-.start-btn:hover, .next-btn:hover, .submit-btn:hover {
+.start-btn:hover {
   background-color: #6a0dad;
+}
+
+.quiz-screen, .result-screen {
+  background-color: black;
 }
 
 .quiz-screen {
