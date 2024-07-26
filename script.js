@@ -12,7 +12,7 @@ document.getElementById('quiz-form').onsubmit = function(event) {
     });
 
     if (!isValid) {
-        document.getElementById('result').textContent = 'Please finish answering all questions';
+        document.getElementById('popup').style.display = 'block';
         return;
     }
 
@@ -38,4 +38,8 @@ document.getElementById('quiz-form').onsubmit = function(event) {
     }
 
     document.getElementById('result').textContent = `Your creative style is: ${resultCategory}`;
+};
+
+document.getElementById('close-popup').onclick = function() {
+    document.getElementById('popup').style.display = 'none';
 };
