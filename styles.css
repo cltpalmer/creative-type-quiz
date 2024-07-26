@@ -25,28 +25,49 @@ h1 {
     display: block;
     margin: 10px 0;
     font-size: 14px;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
 }
 
 .answer input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.answer span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #333;
+    border: 2px solid purple;
+    border-radius: 50%;
+}
+
+.answer input[type="radio"]:checked ~ span {
+    background-color: white;
+}
+
+.answer span:after {
+    content: "";
+    position: absolute;
     display: none;
 }
 
-.answer input[type="radio"] + label {
-    display: inline-block;
-    margin-left: 10px;
-    cursor: pointer;
-    border: 2px solid purple;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    text-align: center;
-    line-height: 20px;
+.answer input[type="radio"]:checked ~ span:after {
+    display: block;
 }
 
-.answer input[type="radio"]:checked + label {
-    background-color: white;
-    color: black;
+.answer span:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: purple;
 }
 
 button {
