@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        document.getElementById('result').textContent = `Your creative style is: ${resultCategory}`;
-        document.getElementById('result').style.color = 'red';
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = `Your creative style is: ${resultCategory}`;
+        resultElement.style.color = 'red';
         document.getElementById('result-container').style.display = 'block';
         document.getElementById('quiz-container').style.display = 'none';
     });
