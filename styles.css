@@ -19,10 +19,8 @@ body {
   background-color: black;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
+.logo img {
+  width: 100px;
   margin-bottom: 20px;
 }
 
@@ -50,6 +48,15 @@ body {
 
 .question-card {
   display: none;
+  position: relative;
+}
+
+.question-number {
+  position: absolute;
+  top: -40px;
+  right: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .question {
