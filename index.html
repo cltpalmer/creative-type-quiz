@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Therapy Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Art Therapy Quiz</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <p>Which medium do you prefer for expressing your creativity?</p>
+                <label class="answer">
+                    <input type="radio" name="q1" value="Explorer"> Drawing
+                </label>
+                <label class="answer">
+                    <input type="radio" name="q1" value="Dreamer"> Painting
+                </label>
+                <label class="answer">
+                    <input type="radio" name="q1" value="Innovator"> Digital Art
+                </label>
+                <label class="answer">
+                    <input type="radio" name="q1" value="Explorer"> Collage
+                </label>
+                <label class="answer">
+                    <input type="radio" name="q1" value="Realist"> Sculpting
+                </label>
+            </div>
+
+            <div class="question">
+                <p>How do you usually feel when you start a new art project?</p>
+                <label class="answer">
+                    <input type="radio" name="q2" value="Innovator"> Excited
+                </label>
+                <label class="answer">
+                    <input type="radio" name="q2" value="Realist"> Calm
+                </label>
+                <label class="answer">
+                    <input type="radio" name="q2" value="Dreamer"> Anxious
+                </label>
+                <label class="answer">
+                    <input type="radio" name="q2" value="Explorer"> Curious
+                </label>
+                <label class="answer">
+                    <input type="radio" name="q2" value="Realist"> Focused
+                </label>
+            </div>
+
+            <!-- Add other questions similarly -->
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
