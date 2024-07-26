@@ -1,31 +1,79 @@
-function startQuiz() {
-  document.getElementById('welcome-screen').style.display = 'none';
-  document.getElementById('quiz-screen').style.display = 'block';
-  document.getElementById('question-1').style.display = 'block';
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-function showNextQuestion(currentQuestion) {
-  document.getElementById(`question-${currentQuestion}`).style.display = 'none';
-  document.getElementById(`question-${currentQuestion + 1}`).style.display = 'block';
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
 }
 
-function submitQuiz() {
-  const form = document.getElementById('quiz-form');
-  const formData = new FormData(form);
-  const scores = {
-    Explorer: 0,
-    Dreamer: 0,
-    Realist: 0,
-    Innovator: 0
-  };
+.welcome-screen, .quiz-screen, .result-screen {
+  background-color: black;
+}
 
-  formData.forEach((value) => {
-    scores[value]++;
-  });
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
 
-  const resultType = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-  
-  document.getElementById('quiz-screen').style.display = 'none';
-  document.getElementById('result-screen').style.display = 'block';
-  document.getElementById('result-type').innerText = resultType;
+.start-btn, .next-btn, .submit-btn {
+  background-color: #A883F9;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.start-btn:hover, .next-btn:hover, .submit-btn:hover {
+  background-color: #6a0dad;
+}
+
+.quiz-screen {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+.question-card {
+  display: none;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answers label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #444;
+  border: 2px solid #A883F9;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.answers label:hover {
+  background-color: white;
+  color: #A883F9;
+  border-color: white;
 }
