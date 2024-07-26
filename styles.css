@@ -11,6 +11,12 @@ body {
     border: 2px solid purple;
     border-radius: 10px;
     background-color: #333;
+    text-align: center;
+}
+
+.logo-container img {
+    width: 100px;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -33,9 +39,9 @@ h1 {
     align-items: center;
     padding: 10px;
     border: 2px solid purple;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .answer input[type="radio"] {
@@ -46,15 +52,9 @@ h1 {
     margin-left: 10px;
 }
 
-.answer:hover {
-    background-color: #6a0dad;
-}
-
-.answer input[type="radio"]:checked + span {
-    background-color: purple;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+.answer:hover, .answer input[type="radio"]:checked + span {
+    background-color: white;
+    color: purple;
 }
 
 button {
