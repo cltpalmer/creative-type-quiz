@@ -24,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     submitButton.addEventListener('click', function (event) {
         event.preventDefault();
-        console.log('Submit button clicked'); // Debug log
-
         const inputs = questions[currentQuestionIndex].querySelectorAll('input[type="radio"]');
         const isAnswered = Array.from(inputs).some(input => input.checked);
         if (!isAnswered) {
@@ -45,8 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
             scores[answer.value]++;
         });
 
-        console.log('Scores:', scores); // Debug log
-
         let maxScore = 0;
         let resultCategory = '';
         for (let category in scores) {
@@ -55,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 resultCategory = category;
             }
         }
-
-        console.log('Result Category:', resultCategory); // Debug log
 
         const resultElement = document.getElementById('result');
         resultElement.textContent = `Your creative style is: ${resultCategory}`;
