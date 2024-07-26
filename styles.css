@@ -24,6 +24,7 @@ h1 {
 .question {
     margin: 20px 0;
     text-align: left;
+    display: none; /* Hide all questions by default */
 }
 
 .answers {
@@ -115,4 +116,9 @@ button:hover {
     cursor: pointer;
     color: white;
     font-size: 24px;
+}
+
+/* Display the first question initially */
+.question:first-child {
+    display: block;
 }
