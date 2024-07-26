@@ -6,12 +6,32 @@ function startQuiz() {
 }
 
 function showNextQuestion(currentQuestion) {
+  const currentQuestionCard = document.getElementById(`question-${currentQuestion}`);
+  const selectedAnswer = currentQuestionCard.querySelector('input[name="q' + currentQuestion + '"]:checked');
+  
+  if (!selectedAnswer) {
+    document.getElementById('popup').style.display = 'flex';
+    return;
+  }
+
   document.getElementById(`question-${currentQuestion}`).style.display = 'none';
   document.getElementById(`question-${currentQuestion + 1}`).style.display = 'block';
   document.getElementById('question-number').innerText = (currentQuestion + 1).toString();
 }
 
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
 function submitQuiz() {
+  const currentQuestionCard = document.getElementById('question-10');
+  const selectedAnswer = currentQuestionCard.querySelector('input[name="q10"]:checked');
+  
+  if (!selectedAnswer) {
+    document.getElementById('popup').style.display = 'flex';
+    return;
+  }
+
   const form = document.getElementById('quiz-form');
   const formData = new FormData(form);
   const scores = {
