@@ -1,74 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Therapy Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Type Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="quiz-container" class="quiz-container">
-        <div class="logo-container">
-            <img src="https://iili.io/dzC7Q2V.png" alt="Logo">
-        </div>
-        <h1>Art Therapy Quiz</h1>
-        <form id="quiz-form">
-            <!-- Question 1 -->
-            <div class="question">
-                <p>Which medium do you prefer for expressing your creativity?</p>
-                <div class="answers">
-                    <label class="answer">
-                        <input type="radio" name="q1" value="Explorer"> <span>Drawing</span>
-                    </label>
-                    <label class="answer">
-                        <input type="radio" name="q1" value="Dreamer"> <span>Painting</span>
-                    </label>
-                    <label class="answer">
-                        <input type="radio" name="q1" value="Innovator"> <span>Digital Art</span>
-                    </label>
-                    <label class="answer">
-                        <input type="radio" name="q1" value="Explorer"> <span>Collage</span>
-                    </label>
-                    <label class="answer">
-                        <input type="radio" name="q1" value="Realist"> <span>Sculpting</span>
-                    </label>
-                </div>
-                <button type="button" class="next-button">Next</button>
-            </div>
-
-            <!-- Add other questions similarly -->
-
-            <!-- Question 10 -->
-            <div class="question">
-                <p>Do you prefer structured projects or freeform creation?</p>
-                <div class="answers">
-                    <label class="answer">
-                        <input type="radio" name="q10" value="Realist"> <span>Structured</span>
-                    </label>
-                    <label class="answer">
-                        <input type="radio" name="q10" value="Explorer"> <span>Freeform</span>
-                    </label>
-                    <label class="answer">
-                        <input type="radio" name="q10" value="Innovator"> <span>A mix of both</span>
-                    </label>
-                    <label class="answer">
-                        <input type="radio" name="q10" value="Dreamer"> <span>Depends on my mood</span>
-                    </label>
-                </div>
-                <button type="submit" id="submit-button">Submit</button>
-            </div>
-        </form>
-        <div id="result-container" style="display: none;">
-            <div id="result" class="result"></div>
-        </div>
+  <div class="container">
+    <div class="welcome-screen" id="welcome-screen">
+      <div class="logo">SIMPLE ART</div>
+      <h1>Welcome</h1>
+      <p>Hi there, please fill out and submit this form.</p>
+      <p>2 Questions</p>
+      <button class="start-btn" onclick="startQuiz()">START</button>
     </div>
 
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span id="close-popup" class="close-popup">&times;</span>
-            <p>Please finish answering all questions.</p>
+    <div class="quiz-screen" id="quiz-screen" style="display: none;">
+      <form id="quiz-form">
+        <div class="question-card" id="question-1">
+          <p>Which medium do you prefer for expressing your creativity?</p>
+          <div class="answers">
+            <label><input type="radio" name="q1" value="Explorer"> Drawing</label>
+            <label><input type="radio" name="q1" value="Dreamer"> Painting</label>
+            <label><input type="radio" name="q1" value="Innovator"> Digital Art</label>
+            <label><input type="radio" name="q1" value="Explorer"> Collage</label>
+            <label><input type="radio" name="q1" value="Realist"> Sculpting</label>
+          </div>
+          <button type="button" class="next-btn" onclick="showNextQuestion(1)">NEXT</button>
         </div>
+
+        <div class="question-card" id="question-2" style="display: none;">
+          <p>How do you usually feel when you start a new art project?</p>
+          <div class="answers">
+            <label><input type="radio" name="q2" value="Innovator"> Excited</label>
+            <label><input type="radio" name="q2" value="Realist"> Calm</label>
+            <label><input type="radio" name="q2" value="Dreamer"> Anxious</label>
+            <label><input type="radio" name="q2" value="Explorer"> Curious</label>
+            <label><input type="radio" name="q2" value="Realist"> Focused</label>
+          </div>
+          <button type="button" class="submit-btn" onclick="submitQuiz()">SUBMIT</button>
+        </div>
+      </form>
     </div>
-    <script src="script.js"></script>
+
+    <div class="result-screen" id="result-screen" style="display: none;">
+      <h2>Your Creative Type: <span id="result-type"></span></h2>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
