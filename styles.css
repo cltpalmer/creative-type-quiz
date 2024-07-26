@@ -44,19 +44,19 @@ body {
   border-radius: 10px;
   width: 80%;
   margin: auto;
-}
-
-.question-card {
-  display: none;
   position: relative;
 }
 
 .question-number {
   position: absolute;
   top: -40px;
-  right: 20px;
+  left: 20px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.question-card {
+  display: none;
 }
 
 .question {
