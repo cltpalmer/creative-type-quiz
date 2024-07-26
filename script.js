@@ -1,5 +1,21 @@
 document.getElementById('quiz-form').onsubmit = function(event) {
     event.preventDefault();
+
+    let isValid = true;
+    let questions = document.querySelectorAll('.question');
+    questions.forEach(question => {
+        let inputs = question.querySelectorAll('input[type="radio"]');
+        let isAnswered = Array.from(inputs).some(input => input.checked);
+        if (!isAnswered) {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        document.getElementById('result').textContent = 'Please finish answering all questions';
+        return;
+    }
+
     let scores = {
         Explorer: 0,
         Dreamer: 0,
