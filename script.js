@@ -2,11 +2,13 @@ function startQuiz() {
   document.getElementById('welcome-screen').style.display = 'none';
   document.getElementById('quiz-screen').style.display = 'block';
   document.getElementById('question-1').style.display = 'block';
+  document.getElementById('question-number').innerText = '1';
 }
 
 function showNextQuestion(currentQuestion) {
   document.getElementById(`question-${currentQuestion}`).style.display = 'none';
   document.getElementById(`question-${currentQuestion + 1}`).style.display = 'block';
+  document.getElementById('question-number').innerText = (currentQuestion + 1).toString();
 }
 
 function submitQuiz() {
